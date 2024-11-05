@@ -10,4 +10,4 @@ if TYPE_CHECKING:
 
 class User(Base):
     username: Mapped[str] = mapped_column(String(30), unique=True)
-    posts = Mapped[list["Post"]] = relationship("Post", back_populates="user")
+    posts: Mapped[list["Post"]] = relationship(back_populates="user")
